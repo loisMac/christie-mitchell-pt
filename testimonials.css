@@ -1,6 +1,6 @@
 :root {
     --primary: #0f0f0f;
-    --accent: #060DF5;
+    --accent: #0303FF;
     --light: #ffffff;
     --gray: #f5f5f5;
     --gray-dark: #e5e5e5;
@@ -17,8 +17,13 @@ html {
     scroll-behavior: smooth;
 }
 
+h1,h2,h3,h4,h5,h6 {
+    font-weight: 500;
+    line-height: 1.25;
+}
+
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     background: var(--light);
     color: var(--text);
     line-height: 1.6;
@@ -48,6 +53,7 @@ body {
     letter-spacing: 3px;
     color: var(--primary);
     text-decoration: none;
+    text-transform: uppercase;
 }
 
 .nav__menu {
@@ -66,11 +72,14 @@ body {
 }
 
 .nav__link:hover {
-    color: var(--accent);
+    color: var(--primary);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
 }
 
 .nav__link--active {
-    color: var(--accent);
+    color: var(--primary);
+    text-decoration: underline;
 }
 
 /* Page Header */
@@ -83,16 +92,17 @@ body {
 }
 
 .page-header h1 {
-    font-size: 3.5rem;
-    font-weight: 900;
+    font-size: 2.5rem;
+    font-weight: 500;
     margin-bottom: 1rem;
     color: var(--primary);
-    letter-spacing: -1px;
+    letter-spacing: -0.5px;
+    text-transform: uppercase;
 }
 
 .page-header p {
     font-size: 1.2rem;
-    color: #666;
+    color: var(--text);
     font-weight: 500;
 }
 
@@ -112,15 +122,15 @@ body {
 
 .testimonial {
     background: white;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     overflow: hidden;
-    border: 2px solid transparent;
+    border: 3px solid #0f0f0f;
     transition: all 0.3s ease;
 }
 
 .testimonial:hover {
-    border-color: var(--accent);
-    box-shadow: 0 20px 50px rgba(6, 13, 245, 0.15);
+    border-color: #0f0f0f;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     transform: translateY(-10px);
 }
 
@@ -133,6 +143,13 @@ body {
     justify-content: center;
     color: #999;
     font-weight: 600;
+    overflow: hidden;
+}
+
+.testimonial__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .testimonial__content {
@@ -141,7 +158,7 @@ body {
 
 .testimonial__text {
     font-size: 1rem;
-    color: #555;
+    color: var(--text);
     margin-bottom: 2rem;
     line-height: 1.8;
     font-style: italic;
@@ -165,7 +182,7 @@ body {
 
 /* Stats */
 .stats {
-    background: var(--gray);
+    background: var(--light);
     padding: 7rem 3rem;
     text-align: center;
 }
@@ -187,7 +204,7 @@ body {
 }
 
 .stat p {
-    color: #555;
+    color: var(--text);
     font-size: 1.1rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -233,13 +250,14 @@ body {
 }
 
 .btn--primary {
-    background: var(--accent);
+    background: var(--primary);
     color: var(--light);
+    border: 2px solid transparent;
 }
 
 .btn--primary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(6, 13, 245, 0.3);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
 }
 
 .btn--secondary {

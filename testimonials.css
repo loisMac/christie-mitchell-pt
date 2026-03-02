@@ -1,10 +1,10 @@
 :root {
-    --primary: #0f0f0f;
+    --primary: #333333;
     --accent: #0303FF;
     --light: #ffffff;
     --gray: #f5f5f5;
     --gray-dark: #e5e5e5;
-    --text: #0f0f0f;
+    --text: #222222;
 }
 
 * {
@@ -18,12 +18,12 @@ html {
 }
 
 h1,h2,h3,h4,h5,h6 {
-    font-weight: 500;
+    font-weight: 200;
     line-height: 1.25;
 }
 
 body {
-    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: roboto condensed, 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     background: var(--light);
     color: var(--text);
     line-height: 1.6;
@@ -37,6 +37,8 @@ body {
     background: var(--light);
     z-index: 1000;
     padding: 1.5rem 0;
+    font-weight: 200;
+    font-family: roboto condensed, 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 .nav__container {
@@ -49,11 +51,12 @@ body {
 
 .nav__logo {
     font-size: 1.5rem;
-    font-weight: 800;
-    letter-spacing: 3px;
+    font-weight: 700;
+    letter-spacing: 2px;
     color: var(--primary);
     text-decoration: none;
     text-transform: uppercase;
+    transition: all 0.3s ease;
 }
 
 .nav__menu {
@@ -66,7 +69,7 @@ body {
     text-decoration: none;
     color: var(--text);
     font-size: 0.95rem;
-    font-weight: 600;
+    font-weight: 300;
     transition: color 0.3s ease;
     position: relative;
 }
@@ -82,28 +85,60 @@ body {
     text-decoration: underline;
 }
 
-/* Page Header */
-.page-header {
-    margin-top: 7rem;
-    padding: 5rem 3rem;
-    background: var(--gray);
-    text-align: center;
-    animation: fadeIn 0.8s ease-out;
-}
-
-.page-header h1 {
-    font-size: 2.5rem;
-    font-weight: 500;
-    margin-bottom: 1rem;
-    color: var(--primary);
-    letter-spacing: -0.5px;
+/* Eyebrow */
+.eyebrow {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 300;
+    letter-spacing: 3px;
     text-transform: uppercase;
+    opacity: 0.5;
+    margin-bottom: 0.75rem;
 }
 
-.page-header p {
-    font-size: 1.2rem;
-    color: var(--text);
-    font-weight: 500;
+/* Page Hero */
+.page-hero {
+    margin-top: 7rem;
+    height: 55vh;
+    display: flex;
+    align-items: flex-end;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    padding: 0 3rem 4rem;
+}
+
+.page-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 15, 15, 0.35);
+    z-index: 1;
+}
+
+.page-hero__content {
+    position: relative;
+    z-index: 2;
+}
+
+.page-hero__content .eyebrow {
+    color: var(--light);
+    opacity: 0.65;
+}
+
+.page-hero__content h1 {
+    font-size: 3rem;
+    font-weight: 200;
+    letter-spacing: -0.5px;
+    color: var(--light);
+    margin-bottom: 0.5rem;
+}
+
+.page-hero__content p {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.8);
 }
 
 /* Testimonials */
@@ -124,14 +159,13 @@ body {
     background: white;
     border-radius: 0.5rem;
     overflow: hidden;
-    border: 3px solid #0f0f0f;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07);
     transition: all 0.3s ease;
 }
 
 .testimonial:hover {
-    border-color: #0f0f0f;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transform: translateY(-8px);
 }
 
 .testimonial__image {
@@ -142,7 +176,7 @@ body {
     align-items: center;
     justify-content: center;
     color: #999;
-    font-weight: 600;
+    font-weight: 300;
     overflow: hidden;
 }
 
@@ -156,18 +190,29 @@ body {
     padding: 2.5rem;
 }
 
+.testimonial__content::before {
+    content: '\201C';
+    display: block;
+    font-size: 5rem;
+    font-weight: 200;
+    color: var(--primary);
+    opacity: 0.12;
+    line-height: 1;
+    margin-bottom: -1.25rem;
+}
+
 .testimonial__text {
     font-size: 1rem;
     color: var(--text);
     margin-bottom: 2rem;
     line-height: 1.8;
     font-style: italic;
-    font-weight: 500;
+    font-weight: 300;
 }
 
 .testimonial__content h4 {
     font-size: 1.2rem;
-    font-weight: 800;
+    font-weight: 400;
     color: var(--primary);
     margin-bottom: 0.5rem;
 }
@@ -175,14 +220,14 @@ body {
 .testimonial__role {
     font-size: 0.95rem;
     color: var(--accent);
-    font-weight: 700;
+    font-weight: 300;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
 /* Stats */
 .stats {
-    background: var(--light);
+    background: var(--gray);
     padding: 7rem 3rem;
     text-align: center;
 }
@@ -197,8 +242,8 @@ body {
 
 .stat h3 {
     font-size: 3.5rem;
-    font-weight: 900;
-    color: var(--accent);
+    font-weight: 200;
+    color: var(--primary);
     margin-bottom: 0.75rem;
     letter-spacing: -1px;
 }
@@ -206,64 +251,72 @@ body {
 .stat p {
     color: var(--text);
     font-size: 1.1rem;
-    font-weight: 600;
-    text-transform: uppercase;
+    font-weight: 300;
     letter-spacing: 1px;
 }
 
 /* CTA */
 .cta {
-    background: var(--primary);
-    color: var(--light);
+    background: #f4f4f4;
+    color: var(--text);
     padding: 7rem 3rem;
     text-align: center;
     animation: fadeIn 0.8s ease-out;
 }
 
 .cta h2 {
-    font-size: 3.5rem;
-    font-weight: 900;
+    font-size: 2.5rem;
+    font-weight: 300;
     margin-bottom: 1rem;
-    letter-spacing: -1px;
+    letter-spacing: -0.5px;
 }
 
 .cta p {
     font-size: 1.2rem;
     margin-bottom: 3rem;
-    font-weight: 500;
+    font-weight: 300;
     opacity: 0.95;
+}
+
+.cta .btn {
+    margin: 0 0.5rem;
+    outline: var(--text) 1px solid;
+    color: var(--text);
 }
 
 /* Buttons */
 .btn {
     display: inline-block;
-    padding: 1rem 2.5rem;
-    border-radius: 0.5rem;
+    padding: 0.8rem 2rem;
+    border-radius: 5rem;
     text-decoration: none;
-    font-weight: 700;
-    font-size: 1rem;
+    font-weight: 500;
+    font-size: 0.9rem;
     transition: all 0.3s ease;
-    border: none;
+    border: 1px solid transparent;
     cursor: pointer;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
 }
 
 .btn--primary {
-    background: var(--primary);
-    color: var(--light);
-    border: 2px solid transparent;
+    background: var(--light);
+    color: var(--text);
+    border: 1px solid var(--light);
 }
 
 .btn--primary:hover {
+    background: transparent;
+    color: var(--light);
+    border-color: var(--light);
     transform: translateY(-3px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
 .btn--secondary {
     background: transparent;
     color: var(--primary);
-    border: 2.5px solid var(--primary);
+    border: 1px solid var(--primary);
 }
 
 .btn--secondary:hover {
@@ -275,12 +328,12 @@ body {
 .btn--light {
     background: transparent;
     color: var(--light);
-    border: 2.5px solid var(--light);
+    border: 1px solid var(--light);
 }
 
 .btn--light:hover {
     background: var(--light);
-    color: var(--primary);
+    color: var(--accent);
     transform: translateY(-3px);
 }
 
@@ -293,24 +346,24 @@ body {
 
 /* Footer */
 .footer {
-    background: var(--primary);
-    color: var(--light);
+    background: var(--light);
+    color: var(--text);
     padding: 2.5rem 3rem;
-    text-align: center;
+    text-align: left;
     font-size: 0.9rem;
-    font-weight: 600;
+    font-weight: 300;
 }
 
 .footer__link {
-    color: var(--accent);
+    color: var(--text);
     text-decoration: none;
-    transition: color 0.3s ease;
     margin-left: 2rem;
-    font-weight: 700;
+    transition: color 0.3s ease;
+    font-weight: 200;
 }
 
 .footer__link:hover {
-    color: var(--light);
+    color: var(--accent);
 }
 
 /* Animations */
@@ -336,7 +389,7 @@ body {
     }
 
     .page-header h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 
     .stat h3 {
@@ -368,6 +421,6 @@ body {
     }
 
     .cta h2 {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 }

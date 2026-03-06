@@ -225,65 +225,6 @@ body {
     letter-spacing: 0.5px;
 }
 
-/* Stats */
-.stats {
-    background: var(--gray);
-    padding: 7rem 3rem;
-    text-align: center;
-}
-
-.stats__grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-.stat h3 {
-    font-size: 3.5rem;
-    font-weight: 200;
-    color: var(--primary);
-    margin-bottom: 0.75rem;
-    letter-spacing: -1px;
-}
-
-.stat p {
-    color: var(--text);
-    font-size: 1.1rem;
-    font-weight: 300;
-    letter-spacing: 1px;
-}
-
-/* CTA */
-.cta {
-    background: #f4f4f4;
-    color: var(--text);
-    padding: 7rem 3rem;
-    text-align: center;
-    animation: fadeIn 0.8s ease-out;
-}
-
-.cta h2 {
-    font-size: 2.5rem;
-    font-weight: 300;
-    margin-bottom: 1rem;
-    letter-spacing: -0.5px;
-}
-
-.cta p {
-    font-size: 1.2rem;
-    margin-bottom: 3rem;
-    font-weight: 300;
-    opacity: 0.95;
-}
-
-.cta .btn {
-    margin: 0 0.5rem;
-    outline: var(--text) 1px solid;
-    color: var(--text);
-}
-
 /* Buttons */
 .btn {
     display: inline-block;
@@ -346,7 +287,7 @@ body {
 
 /* Footer */
 .footer {
-    background: var(--light);
+    background: #f4f4f4;
     color: var(--text);
     padding: 2.5rem 3rem;
     text-align: left;
@@ -383,18 +324,6 @@ body {
         gap: 1.5rem;
     }
 
-    .stats__grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-
-    .page-header h1 {
-        font-size: 2rem;
-    }
-
-    .stat h3 {
-        font-size: 2.5rem;
-    }
 
     .nav__container {
         padding: 0 1.5rem;

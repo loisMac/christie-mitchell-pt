@@ -291,35 +291,6 @@ body {
     font-weight: 300;
 }
 
-/* CTA */
-.cta {
-    background: #f4f4f4;
-    color: var(--text);
-    padding: 7rem 3rem;
-    text-align: center;
-    animation: fadeIn 0.8s ease-out;
-}
-
-.cta h2 {
-    font-size: 2.5rem;
-    font-weight: 300;
-    margin-bottom: 1rem;
-    letter-spacing: -0.5px;
-}
-
-.cta p {
-    font-size: 1.2rem;
-    margin-bottom: 3rem;
-    font-weight: 300;
-    opacity: 0.95;
-}
-
-.cta .btn {
-    margin: 0 0.5rem;
-    outline: var(--text) 1px solid;
-    color: var(--text);
-}
-
 /* Buttons */
 .btn {
     display: inline-block;
@@ -382,7 +353,7 @@ body {
 
 /* Footer */
 .footer {
-    background: var(--light);
+    background: #f4f4f4;
     color: var(--text);
     padding: 2.5rem 3rem;
     text-align: left;

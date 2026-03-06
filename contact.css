@@ -319,7 +319,7 @@ body {
 
 /* Footer */
 .footer {
-    background: var(--light);
+    background: #f4f4f4;
     color: var(--text);
     padding: 2.5rem 3rem;
     text-align: left;
